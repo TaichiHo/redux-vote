@@ -22,7 +22,8 @@ function mapStateToProps(state) {
     return {
         // In reality, please draw a state diagram to do this.
         pair: state.getIn(['vote', 'pair']),
-        winner: state.get('winner')
+        winner: state.get('winner'),
+        hasVoted: state.get('hasVoted')
     };
 }
 

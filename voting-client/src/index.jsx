@@ -8,6 +8,8 @@ import ReactDOM from 'react-dom';
 import {Voting, VotingContainer} from './components/Voting';
 import {Results,ResultsContainer} from './components/Results.jsx';
 
+import io from 'socket.io-client'
+
 // Router related:
 import {Route, Router, hashHistory} from 'react-router';
 import App from './components/App';
@@ -26,14 +28,12 @@ const routes = (
     </Route>);
 
 const store = createStore(reducer);
-store.dispatch({
-    type: 'SET_STATE',
-    state: {
-        vote: {
-            pair: ['Batman', 'Superman'],
-            tally: {'Batman': 3}
-        }
-    }
+
+
+const socket = io(`${location.protocol}//${location.hostname}:8090`);
+socket.on('state', state => {
+    "use strict";
+    store.dispatch({type: 'SET_STATE', state})
 });
 
 
