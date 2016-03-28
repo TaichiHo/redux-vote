@@ -23,7 +23,7 @@ describe('Results', ()=> {
         expect(entries.length).to.equal(2);
         expect(batman).to.contain('Batman');
         expect(batman).to.contain(5);
-        expect(superman).to.contain('superman');
+        expect(superman).to.contain('Superman');
         expect(superman).to.contain(0);
     });
     it('invokes the next callback when next button is clicked', ()=> {

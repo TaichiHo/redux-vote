@@ -1,4 +1,4 @@
-import Voting from '../../src/components/Voting.jsx'
+import {Voting} from '../../src/components/Voting.jsx'
 import ReactDOM from 'react-dom'
 import {expect} from 'chai'
 import {

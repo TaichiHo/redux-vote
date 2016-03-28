@@ -32,7 +32,7 @@ export default React.createClass({
             <div className="results">
                 <div className="tally">
                     {
-                        this.getPair.map(entry =>
+                        this.getPair().map(entry =>
                             <div key={entry} className="entry">
                                 <h1>{entry}</h1>
                                 <div className="voteCount">
