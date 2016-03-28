@@ -18,3 +18,11 @@ export function vote(entry) {
         entry
     }
 }
+
+export function next() {
+    "use strict";
+    return {
+        meta: {remote: true},
+        type: 'NEXT'
+    }
+}
