@@ -21,7 +21,7 @@ import {Provider} from 'react-redux';
 
 import {setState} from './action_creators'
 
-import remoteActionMiddle from './remote_action_middleware';
+import remoteActionMiddleware from './remote_action_middleware';
 
 
 // For medium or big app, connecting each of the router's components is usually a good idea
@@ -32,9 +32,6 @@ const routes = (
         <Route path="/results" component={ResultsContainer}/>
     </Route>);
 
-const createStoreWithMiddleware = applyMiddleware(remoteActionMiddle)(createStore);
-const store = createStoreWithMiddleware(reducer);
-
 
 const socket = io(`${location.protocol}//${location.hostname}:8090`);
 socket.on('state', state => {
@@ -42,6 +39,9 @@ socket.on('state', state => {
     store.dispatch(setState(state))
 });
 
+
+const createStoreWithMiddleware = applyMiddleware(remoteActionMiddleware(socket))(createStore);
+const store = createStoreWithMiddleware(reducer);
 
 ReactDOM.render(
     //<Voting pair={pair} hasVoted="Superman"/>,

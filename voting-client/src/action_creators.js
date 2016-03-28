@@ -13,6 +13,7 @@ export function setState(state) {
 export function vote(entry) {
     "use strict";
     return {
+        meta: {remote: true},
         type: 'VOTE',
         entry
     }
