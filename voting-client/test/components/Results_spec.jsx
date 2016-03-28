@@ -7,7 +7,7 @@ import {
 } from 'react-addons-test-utils';
 import {List,Map} from 'immutable';
 import {expect} from 'chai';
-import Results from '../../src/components/Results.jsx';
+import {Results} from '../../src/components/Results.jsx';
 
 describe('Results', ()=> {
     "use strict";

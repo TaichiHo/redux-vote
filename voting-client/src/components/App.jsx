@@ -1,16 +1,17 @@
 import React from 'react';
 import {List, Map} from 'immutable';
 
-const pair = List.of("Batman", "Superman");
-const tally = Map({'Batman': 5, 'Superman': 4});
 
 export default React.createClass({
     render(){
-        "use strict";
-        return React.cloneElement(this.props.children,
-            {
-                pair: pair,
-                tally: tally
-            });
+        return (
+            <div>
+                <div><h2>Common Header</h2></div>
+                {
+                    this.props.children
+                }
+                <div><h2>Common footer</h2></div>
+            </div>
+        )
     }
 })
