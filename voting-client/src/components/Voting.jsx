@@ -3,6 +3,7 @@ import Winner from './Winner.jsx';
 import Vote from './Vote.jsx';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {connect} from 'react-redux';
+import * as actionCreators from '../action_creators'
 
 // still use the React.createClass syntax so that we can still use mixins
 export const Voting = React.createClass({
@@ -28,4 +29,7 @@ function mapStateToProps(state) {
 }
 
 
-export const VotingContainer = connect(mapStateToProps)(Voting);
+export const VotingContainer = connect(
+    mapStateToProps,
+    actionCreators)
+(Voting);

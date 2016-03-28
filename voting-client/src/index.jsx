@@ -19,6 +19,8 @@ import {createStore} from 'redux';
 import reducer from './reducer';
 import {Provider} from 'react-redux';
 
+import {setState} from './action_creators'
+
 // For medium or big app, connecting each of the router's components is usually a good idea
 
 const routes = (
@@ -33,7 +35,7 @@ const store = createStore(reducer);
 const socket = io(`${location.protocol}//${location.hostname}:8090`);
 socket.on('state', state => {
     "use strict";
-    store.dispatch({type: 'SET_STATE', state})
+    store.dispatch(setState(state))
 });
 
 
