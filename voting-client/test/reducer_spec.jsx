@@ -89,8 +89,8 @@ describe('reducer', ()=> {
             vote: {
                 pair: ['Superman', 'Batman'],
                 tally: {Batman: 1},
-                hasVoted: "Batman"
             }
+            hasVoted: "Batman"
         }));
     });
     it('does not set hasVoted for VOTE on invlaid entry', ()=> {
