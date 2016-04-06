@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - "5"
+  - "4"
+env:
+  - TEST_DIR=voting-client
+  - TEST_DIR=voting-server
+script: cd $TEST_DIR && npm install && npm test
