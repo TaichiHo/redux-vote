@@ -89,7 +89,7 @@ describe('reducer', ()=> {
             vote: {
                 pair: ['Superman', 'Batman'],
                 tally: {Batman: 1},
-                hasVoted: "Batman1"
+                hasVoted: "Batman"
             }
         }));
     });
