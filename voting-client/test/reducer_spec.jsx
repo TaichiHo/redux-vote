@@ -88,8 +88,8 @@ describe('reducer', ()=> {
         expect(nextState).to.equal(fromJS({
             vote: {
                 pair: ['Superman', 'Batman'],
-                tally: {Batman: 1},
-            }
+                tally: {Batman: 1}
+            },
             hasVoted: "Batman"
         }));
     });
