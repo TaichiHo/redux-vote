@@ -1,8 +1,15 @@
 language: node_js
 node_js:
-  - "5"
-  - "4"
+- '5'
+- '4'
 env:
-  - TEST_DIR=voting-client
-  - TEST_DIR=voting-server
+- TEST_DIR=voting-client
+- TEST_DIR=voting-server
 script: cd $TEST_DIR && npm install && npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: iTKoIzjhPfw7B1aVSkfsN20tzKXQQ198oo9Sa+rIJO7Orqwo4Bz74AGmkQW/VvVwBwzHAxqe5PdrRr+bi8XF+ck/pXwYw/Unxu0B08Vf7TEgCb5jN8Hr1zrS4EjdDJwc6EyGNU0+DNaPxPOoAzCSVjsgA+bHOexRxLxQtJw9VGHqDs2SXOmSabsy9kkV46UEjeP6GMHbmNU8kGC0ktlMlRP6AXbgrZxqCYhIipv/NCGmqU5ey4M0tf/pWUkFVjHfX04V7xQjJ/F+4bb8vrlH/JCvjYGRYjBbYwHA4qHl1lNSZoSb3n8mgIyZXwd79eg9oZ1XLRxqSorEsj0iAXSrQrXKs/3V5qkj42BKdsSSJSCjMLlGclneShxDn6+efxEJfkLEOehvZoQm+KZuqmKy47IZ+lphP9l3y9TjGwBXAxwKv0vLReM2cBDadhLMZ12SY3+k3GyurPEUAh9uxixvrlNIAq3Qta54meiaEDWoaCuAKU+8nzhMMtK1cs3H95XADdOYU1ynGgBaI+s05//18BUCfmD7I8f86qA81pu5Ts89F2TR3Tdmeef0KfrZ2aTrJtbyOP9xESuQrDWk9SNIPq5smZd5ZP1j+ZJUHpHd95kmYvoM1zdLkB/BVPVJkobLrLvoPj/qv9DfWJt85TqKWSgyHxB2LfzRhlqvhcUyG+4=
+  app: redux-vote
+  on:
+    repo: TaichiHo/redux-vote
